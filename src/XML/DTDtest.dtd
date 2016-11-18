@@ -1,0 +1,29 @@
+<!--外部DTD-->
+
+<!--属性类型
+    1.CDATA：任意字符（包括数字和中文）
+    2.ID：唯一 不能以数字开头 在同一个XML是唯一的
+    3.IDREF:只允许指向一个存在的ID
+    IDREFS:允许指向多个存在的ID
+    4.（枚举1／枚举2/枚举3）:属性只允许是枚举值
+    属性特点
+    #REQUIRED 必须出现
+    #IMPLIED 非必须
+    default-value :默认值 可以不出现 不出现的话是默认值 如果出现设置的值是什么就是什么
+    #FIXED：可以不出现 如果出现则必须是默认值
+
+
+
+
+    -->
+<!ELEMENT employees (employee+)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT employee (name,address)>
+<!ATTLIST employee
+        id ID #REQUIRED
+        name CDATA #IMPLIED
+        age default-value  "20"
+        depName (市场部|教学部|教学管理部) #REQUIRED
+        salary CDATA #IMPLIED
+        gender CDATA default-value "female">

@@ -48,7 +48,7 @@ public class StmtAndPstmt {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String sql="insert into dubo_user values("+id+",'"+name+"')";
+        //String sql="insert into dubo_user values("+id+",'"+name+"')";
         String sql2="insert into dubo_user values(?,?)";
         PreparedStatement pstmt= null;
         try {
@@ -59,7 +59,7 @@ public class StmtAndPstmt {
         try {
             pstmt.setInt(1,id);
             pstmt.setString(2,name);
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
             pstmt.close();
             connection.close();
         } catch (SQLException e) {

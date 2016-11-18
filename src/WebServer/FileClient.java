@@ -12,7 +12,7 @@ public class FileClient {
         DataInputStream dataInputStream=null;
         DataOutputStream dataOutputStream=null;
         try {
-            Socket client=new Socket("localhost",8888);
+            Socket client=new Socket("http://202.207.247.42/Pages/Cjd/Xszp.aspx?xh=2013005239",80);
 
             File file=new File("TA.jpg");
             FileInputStream fileInputStream=new FileInputStream(file);

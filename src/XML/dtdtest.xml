@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--约束元素 element-->
+<!--内部DTD-->
+<!--书写实体entity和DTD的位置-->
+<!DOCTYPE students SYSTEM "XML/DTDtest.dtd">
+<students>
+    <student id="and2013001" pid="and2013002" gender="男" nativeplace="山西">
+        <name></name>
+        <address></address>
+    </student>
+    <student id="and2013002" pid="and2013003" gender="女">
+        <name></name>
+        <address></address>
+    </student>
+    <student id="and2013003" pid="and2013001" gender="女">
+        <name></name>
+        <address></address>
+    </student>
+</students>

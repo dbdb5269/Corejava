@@ -148,6 +148,7 @@ public class Response {
             byte[] datas = new byte[fileSize];
             try {
                 fileInputStream.read(datas);
+                System.out.println("123333333");
             } catch (IOException e) {
                 e.printStackTrace();
             }

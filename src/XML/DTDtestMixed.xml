@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+        <!DOCTYPE students SYSTEM "XML/DTDtest.dtd"[
+                <!ELEMENT student (#PCDATA)>
+                <!ELEMENT students (student)>
+
+                ]>
+
+<students>
+
+</students>

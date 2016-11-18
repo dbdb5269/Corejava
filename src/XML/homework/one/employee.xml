@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE employees SYSTEM "XML/DTDtest.dtd">
+
+<employees>
+    <employee id="123" age="20" depName="市场部">
+        <name></name>
+        <address></address>
+    </employee>
+</employees>

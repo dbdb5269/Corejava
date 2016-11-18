@@ -12,5 +12,5 @@ public  class Fruit  {
     public String getName() {
         return name;
     }
-    //public abstract void passEat(Person person);
+    //public abstract void passEat(PersonDecorator person);
 }

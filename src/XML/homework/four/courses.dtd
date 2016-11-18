@@ -1,0 +1,7 @@
+<!ATTLIST courses
+        classnumber CDATA #REQUIRED
+        classname CDATA #REQUIRED
+        classtime CDATA #REQUIRED
+        classteacher ID #REQUIRED
+        class CDATA #IMPLIED
+        >

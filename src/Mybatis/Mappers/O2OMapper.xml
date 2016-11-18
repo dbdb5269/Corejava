@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- com.briup.mappers.StudentMapper是我们定义接口的全限定名字 这样就可以使用接口调用映射的SQL语句了 这个名字一定要和接口对应上-->
+<mapper namespace="Mybatis.o2o.O2OMapper">
+
+    <insert id="saveHus" parameterType="hus">
+        <selectKey order="BEFORE" keyColumn="id" resultType="int" keyProperty="id">
+            select my_seq.nextval from dual
+        </selectKey>
+        INSERT INTO
+        HUSBAND(id,name)
+        VALUES(#{id},#{name})
+    </insert>
+    <insert id="saveWife" parameterType="wife">
+        <selectKey order="BEFORE" keyColumn="id" resultType="int" keyProperty="id">
+            select my_seq.nextval from dual
+        </selectKey>
+        INSERT INTO
+        WIFE(id,name,h_id)
+        VALUES(#{id},#{name},#{husband.id})
+    </insert>
+    <resultMap id="WifeMap" type="wife">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <!--第一种方式-->
+    <resultMap id="wifeandhusband" type="wife" extends="WifeMap">
+        <result property="husband.id" column="hid"/>
+        <result property="husband.name" column="hname"/>
+    </resultMap>
+    <select id="selectWifeAndHusByWifeId" parameterType="int" resultMap="wifeandhusband">
+        SELECT w.id,w.name,h.id hid,h.name hname
+        FROM WIFE w,HUSBAND h
+        WHERE w.h_id=h.id
+        AND w.id=#{id}
+    </select>
+
+
+    <resultMap id="HusMap" type="hus">
+        <id property="id" column="hid"/>
+        <result property="name" column="hname"/>
+    </resultMap>
+
+
+    <!--第二种方式-->
+    <resultMap id="wifeandhusband2" type="wife" extends="WifeMap">
+        <association property="husband" resultMap="HusMap" ></association>
+    </resultMap>
+    <select id="selectWifeAndHusByWifeId2" parameterType="int" resultMap="wifeandhusband2">
+        SELECT w.id,w.name,h.id hid,h.name hname
+        FROM WIFE w,HUSBAND h
+        WHERE w.h_id=h.id
+        AND w.id=#{id}
+    </select>
+    <!--第三种方式-->
+    <select id="selectHusbandById" parameterType="int" resultMap="HusMap">
+        SELECT *
+        FROM HUSBAND
+        WHERE id=#{id}
+    </select>
+    <resultMap id="wifeandhusband3" type="wife" extends="WifeMap">
+
+        <association property="husband" select="selectHusbandById" column="h_id"></association>
+    </resultMap>
+
+    <select id="selectWifeAndHusByWifeId3" parameterType="int" resultMap="wifeandhusband3">
+        SELECT *
+        FROM WIFE
+        WHERE  id=#{id}
+    </select>
+</mapper>
+

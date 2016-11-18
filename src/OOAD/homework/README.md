@@ -1,0 +1,2 @@
+TA:
+I am sorry ,i can't finish this homework in the deadline.Beacouse i went to Shanghai this sunday,i hava a written examination about Agricultural Bank of China. i will finish this homework at Tuesday.

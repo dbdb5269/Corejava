@@ -2,10 +2,20 @@ package com.mrdubo;
 
 import java.util.*;
 
-public abstract class Main extends Test2{
-    @Override
-    public void test() {
+class test{
+    public static void test(){
+        System.out.println("world");
+    }
+}
 
+public class Main extends test{
+
+    public static void test(){
+        System.out.println("hello");
+    }
+    public static void main(String[] args) {
+        test();
     }
 
 }
+

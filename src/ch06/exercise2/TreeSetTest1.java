@@ -40,7 +40,7 @@ public class TreeSetTest1 {
             Map.Entry entry=(Map.Entry)iterator2.next();
             System.out.println(entry.getKey());
         }
-        // ArrayList<Person> treeSet=new ArrayList<>();
+        // ArrayList<PersonDecorator> treeSet=new ArrayList<>();
 
         Person p4=new Person("d",25,false);
         Person p5=new Person("e",26,false);

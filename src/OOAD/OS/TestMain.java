@@ -9,8 +9,8 @@ public class TestMain {
         Role role=new Role("admin");
         User user=new User("dubo",role);
         Authority authority=new Authority("rw");
-        Operate operate=new Operate("读写",authority);
-        operate.toString(operate,user);
+//        Operate operate=new Operate("读写",authority);
+//        operate.toString(operate,user);
 
     }
 }

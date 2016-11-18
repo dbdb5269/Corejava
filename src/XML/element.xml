@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE elements[
+
+
+                <!ELEMENT elements (element+)>
+                <!ELEMENT id (#PCDATA)>
+                <!ELEMENT name (#PCDATA)>
+
+                <!ELEMENT element (#PCDATA|name)*>
+                ]>
+<elements>
+    <element>
+
+        <name></name>
+        <name></name>
+    </element>
+
+</elements>
